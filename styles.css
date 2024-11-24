@@ -1,0 +1,50 @@
+/* Basic body and layout styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  flex-direction: column;
+}
+
+/* Container for the grid and score */
+.container {
+  text-align: center;
+}
+
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(8, 50px); /* 8 columns with 50px width each */
+  grid-template-rows: repeat(8, 50px);    /* 8 rows with 50px height each */
+  gap: 5px; /* Gap between the cells */
+  margin-bottom: 20px;
+}
+
+/* Styling for each cell in the grid */
+.cell {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px; /* Adjust font size for your objects */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Add a hover effect for the cells */
+.cell:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Score display styling */
+#score {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
