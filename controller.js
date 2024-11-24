@@ -1,4 +1,4 @@
-import GameModel from './model.js';  // Correct import
+import GameModel from './model.js'; 
 import { renderGrid } from './view.js';
 
 const controller = (() => {
@@ -7,11 +7,11 @@ const controller = (() => {
     let gameModel;
 
     function startGame() {
-        gameModel = new GameModel(rows, cols);  // Initialize the game model
+        gameModel = new GameModel(rows, cols);  
         gameModel.lastClick = null;
         const grid = gameModel.grid;
-        renderGrid(grid, handleCellClick);  // Render the grid
-        updateScore();  // Display initial score
+        renderGrid(grid, handleCellClick);  
+        updateScore();  
     }
 
     function handleCellClick(row, col) {
@@ -40,7 +40,7 @@ const controller = (() => {
                         gameModel.refillBoard();
                         renderGrid(gameModel.grid, handleCellClick);
                         updateScore();  // Update score after applying matches
-                    }, 3000);
+                    }, 500);
                 } else {
                     // No matches found, swap back
                     gameModel.swapObjects(row, col, gameModel.lastClick.row, gameModel.lastClick.col);
@@ -71,8 +71,8 @@ const controller = (() => {
 
     function updateScore() {
         const score = gameModel.getScore();
-        console.log('Updated score:', score);  // Debugging line
-        document.getElementById('score').innerText = `Score: ${score}`; // Update score dynamically
+        console.log('Updated score:', score);  
+        document.getElementById('score').innerText = `Score: ${score}`; 
     }
 
     return { startGame };

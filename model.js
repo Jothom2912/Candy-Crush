@@ -4,17 +4,17 @@ class GameModel {
         this.cols = cols;
         this.grid = this.createGrid();
         this.score = 0;
-        this.lastClick = null;  // To track the last clicked cell
+        this.lastClick = null; 
     }
 
-    // Initialize the grid with random objects (e.g., numbers or characters)
+  
+
     createGrid() {
         const grid = [];
-        const objects = ['🍎', '🍌', '🍒', '🍓', '🍉'];  // Example objects
+        const objects = ['🍎', '🍌', '🍒', '🍓', '🍉'];  
         for (let row = 0; row < this.rows; row++) {
             const rowArr = [];
             for (let col = 0; col < this.cols; col++) {
-                // Randomly select an object from the array
                 rowArr.push(objects[Math.floor(Math.random() * objects.length)]);
             }
             grid.push(rowArr);
@@ -105,14 +105,14 @@ class GameModel {
         for (let row = 0; row < this.rows; row++) {
             for (let col = 0; col < this.cols; col++) {
                 if (this.grid[row][col] === null) {
-                    const objects = ['🍎', '🍌', '🍒', '🍓', '🍉'];  // Example objects
+                    const objects = ['🍎', '🍌', '🍒', '🍓', '🍉'];  
                     this.grid[row][col] = objects[Math.floor(Math.random() * objects.length)];
                 }
             }
         }
     }
 
-    // Getter for the current score
+
     getScore() {
         return this.score;
     }
